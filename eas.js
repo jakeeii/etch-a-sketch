@@ -1,4 +1,5 @@
 let resetBtn = document.getElementById('reset')
+  resetBtn.addEventListener('click', resetGrid)
 let numRows = prompt("Please enter how many rows you want (1 to 100)")
 let gridSize = numRows * numRows
 
@@ -15,14 +16,13 @@ function createGrid(){
       tile.style.backgroundColor = 'black'
     })
   }
-
 }
 
-// function resetGrid() {
-//   for (let i = 0; i < gridSize; i++){
-//     let tile = document.getElementById("tile" + i)
-//     tile.style.backgroundColor = 'white'
-//   }
-// }
+function resetGrid() {
+  for (let i = 0; i < gridSize; i++){
+    let tile = document.getElementById("tile" + i)
+    tile.style.backgroundColor = ''
+  }
+}
 
 createGrid();
