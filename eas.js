@@ -1,7 +1,7 @@
 let resetBtn = document.getElementById('reset')
   resetBtn.addEventListener('click', resetGrid)
 let grid = document.getElementById('grid')
-let numRows = prompt("Please enter how many rows you want (1 to 100)")
+let numRows = validateInput(prompt("Please enter how many rows you want (1 to 100)"))
 let gridSize = numRows * numRows
 
 function createGrid(){
@@ -23,9 +23,17 @@ function resetGrid() {
     let tile = document.getElementById("tile" + i)
     grid.removeChild(tile);
   }
-  numRows = prompt("Please enter how many rows you want (1 to 100)")
+  numRows = validateInput(prompt("Please enter how many rows you want (1 to 100)"))
   gridSize = numRows * numRows
   createGrid()
+}
+
+function validateInput(input) {
+  if (input <= 100 && input > 0) {
+    return input
+  } else {
+    validateInput(prompt("Only enter a number between 1 and 100"))
+  }
 }
 
 createGrid();
