@@ -1,9 +1,11 @@
-// To add a dynamic grid later on. Default is 16*16 grid.
-// grid.style.gridTemplateColumns = `repeat(${numSqr}, 1fr)`;
+let resetBtn = document.getElementById('reset')
+let numRows = prompt("Please enter how many rows you want (1 to 100)")
+let gridSize = numRows * numRows
 
 function createGrid(){
+  grid.style.gridTemplateColumns = `repeat(${numRows}, 1fr)`;
 
-  for (let i = 0; i < 16 * 16; i++){
+  for (let i = 0; i < gridSize; i++){
     let grid = document.getElementById('grid')
     let newDivSqr = document.createElement('div')
     newDivSqr.id = "tile" + i
@@ -15,5 +17,12 @@ function createGrid(){
   }
 
 }
+
+// function resetGrid() {
+//   for (let i = 0; i < gridSize; i++){
+//     let tile = document.getElementById("tile" + i)
+//     tile.style.backgroundColor = 'white'
+//   }
+// }
 
 createGrid();
