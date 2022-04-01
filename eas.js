@@ -6,7 +6,6 @@ let gridSize = numRows * numRows
 
 function createGrid(){
   grid.style.gridTemplateColumns = `repeat(${numRows}, 1fr)`;
-
   for (let i = 0; i < gridSize; i++){
     let newDivSqr = document.createElement('div')
     newDivSqr.id = "tile" + i
@@ -28,6 +27,7 @@ function resetGrid() {
   createGrid()
 }
 
+// Only allows input between 1 and 100, otherwise will keep calling the function
 function validateInput(input) {
   if (input <= 100 && input > 0) {
     return input
